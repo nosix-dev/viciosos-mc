@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="icon" type="image/logo.png" href="assets/logo.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patch-In — Viciosos MC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Oswald:wght@300;400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">
+    <img src="assets/logo.png" alt="Viciosos MC">
+    <div class="logo-text">VICIOSOS MC<span>DESPERADOS DU DÉSERT</span></div>
+  </div>
+  <nav id="mainNav">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="club.html">Le Club</a></li>
+      <li><a href="code.html">Le Code</a></li>
+      <li><a href="chapitres.html">Chapitres</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="enrolement.html" class="active">Patch-In</a></li>
+    </ul>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<div class="page-header">
+  <span class="eyebrow">Rejoindre</span>
+  <h1>Patch-In</h1>
+  <p>Le chemin pour devenir un Viciosos, étape par étape.</p>
+</div>
+
+<section class="enrolement">
+  <div class="enrol-wrap">
+    <div class="enrol-steps panel" style="padding:36px 38px;">
+      <div class="step">
+        <span class="snum">01</span>
+        <div><h4>Le contact</h4><p>Tu te présentes au clubhouse de Davis ou tu contactes un membre patché. Pas de mp anonyme, on se regarde dans les yeux.</p></div>
+      </div>
+      <div class="step">
+        <span class="snum">02</span>
+        <div><h4>Hangaround</h4><p>Tu roules avec nous, tu observes, on t'observe. Aucune promesse n'est faite avant cette étape.</p></div>
+      </div>
+      <div class="step">
+        <span class="snum">03</span>
+        <div><h4>Prospect</h4><p>Patch provisoire. Tu prouves ta loyauté sur la durée — runs, corvées, présence.</p></div>
+      </div>
+      <div class="step">
+        <span class="snum">04</span>
+        <div><h4>Full Patch</h4><p>Vote des membres. Si c'est oui à l'unanimité, t'es un Viciosos pour de bon — couleurs sur le dos, à vie.</p></div>
+      </div>
+    </div>
+
+    <div class="enrol-card">
+      <h3>Frappe au saloon</h3>
+      <p>On ne recrute pas sur un coup de tête. Si t'as le désert dans le sang et que tu sais ce que loyauté veut dire, viens nous le prouver.</p>
+      <a href="#" class="btn btn-primary">Contacter un Officier</a>
+      <div class="enrol-meta">
+        <span>Discord <b>discord.gg/viciosos</b></span>
+        <span>Statut <b>Ouvert</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="logo-text">VICIOSOS MC</div>
+      <p>Club de moto roleplay du désert. Famille avant tout, route toujours, couleurs jamais rendues.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="club.html">Le Club</a></li>
+        <li><a href="code.html">Le Code</a></li>
+        <li><a href="chapitres.html">Chapitres</a></li>
+        <li><a href="enrolement.html">Patch-In</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#">Discord officiel</a></li>
+        <li><a href="#">Clubhouse — Davis</a></li>
+        <li><a href="#">Officier de recrutement</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© Viciosos MC — Univers fictif roleplay</span>
+    <span>Sable &amp; Sang, jusqu'au bout du désert</span>
+  </div>
+</footer>
+
+<div class="page-transition" id="pageTransition"></div>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+  // Animation de transition lors du changement de page
+  const transition = document.getElementById('pageTransition');
+  document.querySelectorAll('a[href$=".html"]').forEach(link => {
+    link.addEventListener('click', function(e){
+      const href = this.getAttribute('href');
+      if(this.target === '_blank' || href.startsWith('http')) return;
+      e.preventDefault();
+      transition.classList.add('active');
+      setTimeout(() => { window.location.href = href; }, 380);
+    });
+  });
+</script>
+</body>
+</html>

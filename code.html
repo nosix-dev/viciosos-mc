@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="icon" type="image/logo.png" href="assets/logo.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Code — Viciosos MC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Oswald:wght@300;400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo-mark">
+    <img src="assets/logo.png" alt="Viciosos MC">
+    <div class="logo-text">VICIOSOS MC<span>DESPERADOS DU DÉSERT</span></div>
+  </div>
+  <nav id="mainNav">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="club.html">Le Club</a></li>
+      <li><a href="code.html" class="active">Le Code</a></li>
+      <li><a href="chapitres.html">Chapitres</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="enrolement.html">Patch-In</a></li>
+    </ul>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<div class="page-header">
+  <span class="eyebrow">Les trois lois</span>
+  <h1>Le Code</h1>
+  <p>Pas de règlement à rallonge. Trois principes gravés dans le cuir, que chaque prospect connaît avant même de poser la main sur une moto du club.</p>
+</div>
+
+<section class="piliers">
+  <div class="pilier-grid">
+    <div class="pilier">
+      <span class="num">I.</span>
+      <h3>Loyauté</h3>
+      <p>Le club avant tout. Un frère Viciosos n'est jamais seul sur la route, jamais seul face aux ennuis. On répond présent, sans poser de questions.</p>
+    </div>
+    <div class="pilier">
+      <span class="num">II.</span>
+      <h3>Respect</h3>
+      <p>Du territoire, des chapitres alliés, et du patch qu'on porte sur le dos. On ne salit pas les couleurs pour un coup d'éclat personnel.</p>
+    </div>
+    <div class="pilier">
+      <span class="num">III.</span>
+      <h3>Silence</h3>
+      <p>Ce qui se dit au clubhouse reste au clubhouse. Les affaires des Viciosos ne sortent jamais des murs du saloon.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="logo-text">VICIOSOS MC</div>
+      <p>Club de moto roleplay du désert. Famille avant tout, route toujours, couleurs jamais rendues.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="club.html">Le Club</a></li>
+        <li><a href="code.html">Le Code</a></li>
+        <li><a href="chapitres.html">Chapitres</a></li>
+        <li><a href="enrolement.html">Patch-In</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#">Discord officiel</a></li>
+        <li><a href="#">Clubhouse — Davis</a></li>
+        <li><a href="#">Officier de recrutement</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© Viciosos MC — Univers fictif roleplay</span>
+    <span>Sable &amp; Sang, jusqu'au bout du désert</span>
+  </div>
+</footer>
+
+<div class="page-transition" id="pageTransition"></div>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+  // Animation de transition lors du changement de page
+  const transition = document.getElementById('pageTransition');
+  document.querySelectorAll('a[href$=".html"]').forEach(link => {
+    link.addEventListener('click', function(e){
+      const href = this.getAttribute('href');
+      if(this.target === '_blank' || href.startsWith('http')) return;
+      e.preventDefault();
+      transition.classList.add('active');
+      setTimeout(() => { window.location.href = href; }, 380);
+    });
+  });
+</script>
+</body>
+</html>

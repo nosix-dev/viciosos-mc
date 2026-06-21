@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="icon" type="image/logo.png" href="assets/logo.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viciosos MC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&family=Oswald:wght@300;400;500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="page-home">
+
+<header>
+  <div class="logo-mark">
+    <img src="assets/logo.png" alt="Viciosos MC">
+    <div class="logo-text">VICIOSOS MC<span>DESPERADOS DU DÉSERT</span></div>
+  </div>
+  <nav id="mainNav">
+    <ul>
+      <li><a href="index.html" class="active">Accueil</a></li>
+      <li><a href="club.html">Le Club</a></li>
+      <li><a href="code.html">Le Code</a></li>
+      <li><a href="chapitres.html">Chapitres</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="enrolement.html">Patch-In</a></li>
+    </ul>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<section class="hero">
+  <img class="hero-bg" src="assets/hero-banner-v2.jpg" alt="Viciosos MC - bannière du club, trois desperados en sombrero devant un coucher de soleil désertique">
+  <div class="hero-scrim"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">Far South · Quelque part dans le désert</span>
+    <h1>VICIOSOS MC</h1>
+    <p class="hero-sub">Trois coups de feu, un coucher de soleil, et la loi du désert pour seule constitution. On ne demande pas la permission de rouler — on la prend.</p>
+    <div class="hero-cta">
+      <a href="https://discord.gg/GchmZE6HW7" target="_blank" class="btn btn-primary">Devenir Prospect</a>
+      <a href="club.html" class="btn btn-ghost">Notre Histoire</a>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>DÉCOUVRIR</span><div class="bar"></div></div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="logo-text">VICIOSOS MC</div>
+      <p>Club de moto roleplay du désert. Famille avant tout, route toujours, couleurs jamais rendues.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a href="club.html">Le Club</a></li>
+        <li><a href="code.html">Le Code</a></li>
+        <li><a href="chapitres.html">Chapitres</a></li>
+        <li><a href="enrolement.html">Patch-In</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#">Discord officiel</a></li>
+        <li><a href="#">Clubhouse — Davis</a></li>
+        <li><a href="#">Officier de recrutement</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© Viciosos MC — Univers fictif roleplay</span>
+    <span>Sable &amp; Sang, jusqu'au bout du désert</span>
+  </div>
+</footer>
+
+<div class="page-transition" id="pageTransition"></div>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+  // Animation de transition lors du changement de page
+  const transition = document.getElementById('pageTransition');
+  document.querySelectorAll('a[href$=".html"]').forEach(link => {
+    link.addEventListener('click', function(e){
+      const href = this.getAttribute('href');
+      if(this.target === '_blank' || href.startsWith('http')) return;
+      e.preventDefault();
+      transition.classList.add('active');
+      setTimeout(() => { window.location.href = href; }, 380);
+    });
+  });
+</script>
+</body>
+</html>
